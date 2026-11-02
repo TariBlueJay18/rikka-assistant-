@@ -1,0 +1,7 @@
+{
+  "name": "Rikka Assistant",
+  "description": "Desktop AI assistant with Chunibyo Magic (Rikka Takanashi) and Frosted Acrylic modes, streaming responses, multimodal screen context, and system tools.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

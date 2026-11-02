@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mode-rikka ::-webkit-scrollbar-thumb {
+  background: rgba(124, 77, 255, 0.45);
+  border-radius: 9999px;
+}
+
+.mode-normal ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.20);
+  border-radius: 9999px;
+}
+
+/* Arcane rune rotation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes eye-flare {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes siri-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.animate-spin-fast {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 8s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.2s ease-in-out infinite;
+}
+
+.animate-eye-flare {
+  animation: eye-flare 1.8s ease-in-out infinite;
+}
+
+.animate-siri {
+  animation: siri-rotate 4s linear infinite;
+}
+
+/* Wave transition animation helper */
+@keyframes waveExpand {
+  0% {
+    clip-path: circle(0% at var(--wave-origin-x, 80%) var(--wave-origin-y, 20px));
+  }
+  100% {
+    clip-path: circle(160% at var(--wave-origin-x, 80%) var(--wave-origin-y, 20px));
+  }
+}
+
+.animate-wave-ripple {
+  animation: waveExpand 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
